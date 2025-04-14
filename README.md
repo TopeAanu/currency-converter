@@ -1,5 +1,3 @@
-# currency-converter
+# Currency Converter (CC)
 
-After completing a frontend program at mimo.io, i built top-currency-converter. I implemented most of the concepts i learned in javascript (fetched the currency data from an api). 
-
-Cc was built with html, css, and javascript. view the project [here](https://topcurrencyconverter-app.netlify.app/). 
+CC is a currency converter that integrates with an up-to-date currency API to provide seamless conversion between currencies across the globe. [here](https://topcurrencyconverter-app.netlify.app/). 
