@@ -3,19 +3,8 @@ const btn = document.getElementById("btn");
 const num = document.getElementById("num");
 const ans = document.getElementById("ans");
 
-// Get API key from Netlify environment variable
-const getApiKey = () => {
-  // For Netlify production environment
-  if (process.env.EXCHANGE_API_KEY) {
-    return process.env.EXCHANGE_API_KEY;
-  }
-
-  // Fallback to hardcoded key for local development
-  // Remove this in production or replace with a local config import
-  // return "b63db26f3ef7e801732e605f";
-};
-
-const apiKey = getApiKey();
+// Your API key
+const apiKey = "b63db26f3ef7e801732e605f";
 
 // Fetch currency codes from the API
 fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/codes`)
