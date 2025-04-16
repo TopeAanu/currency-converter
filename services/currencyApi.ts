@@ -1,12 +1,16 @@
 // File: services/currencyApi.ts
 import { CurrencyApiResponse, CurrencyCode } from "@/types/currency";
 
-const API_KEY =
-  process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY || "b63db26f3ef7e801732e605f";
+const API_KEY = process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY;
 const BASE_URL = "https://v6.exchangerate-api.com/v6";
 
 export async function fetchCurrencyCodes(): Promise<CurrencyCode[]> {
   try {
+    // Check if API key exists
+    if (!API_KEY) {
+      throw new Error("API key is not defined in environment variables");
+    }
+
     const response = await fetch(`${BASE_URL}/${API_KEY}/codes`);
     const data: CurrencyApiResponse = await response.json();
 
@@ -28,6 +32,11 @@ export async function convertCurrency(
   amount: number
 ): Promise<number> {
   try {
+    // Check if API key exists
+    if (!API_KEY) {
+      throw new Error("API key is not defined in environment variables");
+    }
+
     const response = await fetch(
       `${BASE_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${amount}`
     );
