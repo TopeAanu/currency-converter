@@ -1,4 +1,4 @@
-// File: app/page.tsx
+// app/page.tsx
 import CurrencyConverter from "@/components/CurrencyConverter";
 
 export default function Home() {
