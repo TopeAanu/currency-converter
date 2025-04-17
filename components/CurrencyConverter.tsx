@@ -8,9 +8,9 @@ import {
   KeyboardEvent,
   FormEvent,
 } from "react";
-import { fetchCurrencyCodes, convertCurrency } from "@/services/currencyApi";
+import { fetchCurrencyCodes, convertCurrency } from "../services/currencyApi";
 import { CurrencyCode } from "@/types/currency";
-import styles from "@/app/styles/CurrencyConverter.module.css";
+import styles from "../app/styles/CurrencyConverter.module.css";
 
 export default function CurrencyConverter() {
   const [currencies, setCurrencies] = useState<CurrencyCode[]>([]);
